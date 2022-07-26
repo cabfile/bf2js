@@ -1,8 +1,7 @@
 // v1.8
 const settings = {
 	minus255ToPlus255: false, // whether the range should be -255 ~ 255 and not 0 ~ 255
-	windowsLineBreak: true, // whether to use \r\n instead of \n
-	useStdIn: true
+	windowsLineBreak: true // whether to use \r\n instead of \n
 }
 
 
@@ -93,10 +92,7 @@ async function main() {
 			jspr.addline('process.stdout.write(String.fromCharCode(a[i]));');
 			break;
 			case ",":
-			if(settings.useStdIn)
-				jspr.addline('c++,a[i]=p[0]?p[0].charCodeAt(c)?p[0].charCodeAt(c):0:0;');
-			else
-				jspr.addline('c++,a[i]=p[0]?p[0].charCodeAt(c)?p[0].charCodeAt(c):0:0;');
+			jspr.addline('c++,a[i]=p[0]?p[0].charCodeAt(c)?p[0].charCodeAt(c):0:0;');
 			break;
 		}
 	}
